@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tab_names">
+        <item>商品</item>
+        <item>发布</item>
+        <item>个人</item>
+        <item>设置</item>
+    </string-array>
+
+    <string-array name="tab_picture">
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+    </string-array>
+
+</resources>

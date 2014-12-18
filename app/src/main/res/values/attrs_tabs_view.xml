@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="TabsView">
+        <attr name="tabCount" format="integer" />
+    </declare-styleable>
+</resources>
