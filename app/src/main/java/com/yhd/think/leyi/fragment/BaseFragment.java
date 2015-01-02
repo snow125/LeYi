@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 
 import java.lang.reflect.Field;
@@ -47,7 +49,7 @@ public class BaseFragment extends Fragment {
         getActivity().overridePendingTransition(R.anim.activity_in_left, R.anim.activity_out_right);
     }
 
-    public Application getApplication(){
+    public Application getMyApplication(){
         return getActivity().getApplication();
     }
 

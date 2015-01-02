@@ -1,13 +1,37 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.GoodsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="goods" />
+    <RelativeLayout
+        style="@style/actionbar">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/actionbar_selector"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_left"
+            android:background="@color/actionbar_weight"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="@string/tabs_fragment_goods"/>
+
+        <ImageView
+            android:id="@+id/actionbar_search"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_right"
+            android:background="@color/actionbar_weight"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/fragment_goods_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>

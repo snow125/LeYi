@@ -5,4 +5,36 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="actionbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/activity_tabs</item>
+        <item name="android:background">@color/actionbar_bg</item>
+    </style>
+
+    <style name="actionbar_weight">
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="actionbar_weight_center" parent="actionbar_weight">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/actionbar_center_text</item>
+        <item name="android:textColor">@color/actionbar_center_text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="actionbar_weight_left" parent="actionbar_weight">
+        <item name="android:layout_marginLeft">@dimen/actionbar_margin</item>
+    </style>
+
+    <style name="actionbar_weight_right" parent="actionbar_weight">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/actionbar_margin</item>
+    </style>
+
+    <style name="listview_picture">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
 </resources>

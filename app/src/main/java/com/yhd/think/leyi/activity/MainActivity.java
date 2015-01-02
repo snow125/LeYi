@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.fragment.BaseFragment;
 import com.yhd.think.leyi.fragment.GoodsFragment;
@@ -20,9 +21,6 @@ public class MainActivity extends Activity {
     public static final int FRAGMENT_PUBLISH =  1;
     public static final int FRAGMENT_MINE =  2;
     public static final int FRAGMENT_SETTING =  3;
-
-    //private TabsView mTabsView;
-
 
     private BaseFragment[] fragments = new BaseFragment[4];
     private TabsFragment mTabsFragment = new TabsFragment(new TabsFragment.TabFactory() {
@@ -49,20 +47,26 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         initFragment();
-        //initTabsView();
     }
-
-    /*private void initTabsView() {
-        mTabsView = (TabsView) findViewById(R.id.activity_my_tab_view);
-    }*/
 
     private void initFragment() {
         getFragmentManager().beginTransaction()
                 .replace(R.id.activity_tab_fragments, mTabsFragment)
                 .commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">LeYi</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tabs_fragment_goods">物品</string>
+    <string name="app_name">乐易</string>
+    <string name="tabs_fragment_goods">商品</string>
     <string name="tabs_fragment_publish">发布</string>
     <string name="tabs_fragment_mine">个人</string>
     <string name="tabs_fragment_setting">设置</string>
+    <string name="activity_goods_detail">详情</string>
+
+    <string name="test_textword">高数全套高数全套高数全套高数全套高数全套高数全套高数全套</string>
+
 
 </resources>

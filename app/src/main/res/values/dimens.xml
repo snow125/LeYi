@@ -3,4 +3,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_tabs">48dp</dimen>
+    <dimen name="actionbar_center_text">18sp</dimen>
+    <dimen name="actionbar_margin">10dp</dimen>
+    <dimen name="actionbar_weight">30dp</dimen>
+
+    <dimen name="listview_item_height">60dp</dimen>
+    <dimen name="listview_item_picture_height">40dp</dimen>
+    
+    <dimen name="item_pic2word">10dp</dimen>
+    <dimen name="item_name">17sp</dimen>
+    <dimen name="item_request">14sp</dimen>
 </resources>

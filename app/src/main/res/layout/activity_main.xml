@@ -17,11 +17,4 @@
         android:layout_height="@dimen/activity_tabs">
     </FrameLayout>
 
-    <!--<com.yhd.think.leyi.view.TabsView
-        android:id="@+id/activity_my_tab_view"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_tabs"
-        app:tabCount="4"/>-->
-
 </RelativeLayout>
