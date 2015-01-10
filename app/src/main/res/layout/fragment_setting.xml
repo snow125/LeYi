@@ -1,13 +1,94 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="setting" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="wrap_content"
+            android:text="无图模式"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <com.yhd.think.leyi.view.SwitchView
+            android:id="@+id/fragment_setting_switch"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/good_detail_marginleft"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:id="@+id/fragment_setting_check_update"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="wrap_content"
+        android:text="检查更新"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:id="@+id/fragment_setting_suggestion"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="wrap_content"
+        android:text="意见"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:id="@+id/fragment_setting_tel"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="wrap_content"
+        android:text="客服电话"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:id="@+id/fragment_setting_about"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/good_detail_marginleft"
+        android:layout_width="wrap_content"
+        android:text="关于"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

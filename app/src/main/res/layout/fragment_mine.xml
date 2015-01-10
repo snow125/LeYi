@@ -1,13 +1,56 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.MineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="mine" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" 
+            android:background="#c1c1c1"/>
+        
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp" 
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="准备卖"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="考虑买"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+</LinearLayout>

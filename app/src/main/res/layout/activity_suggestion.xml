@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.SuggestionActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_left"
+            android:background="@color/actionbar_weight"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="意见"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/activity_suggestion_words"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/background_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="160dp" />
+
+        <EditText
+            android:id="@+id/activity_suggestion_tel"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/activity_suggestion_words"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/background_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="60dp" />
+
+        <Button
+            android:id="@+id/activity_suggestion_submit"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/activity_suggestion_tel"
+            android:layout_marginTop="20dp"
+            android:text="提交"
+            android:layout_width="160dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

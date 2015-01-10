@@ -5,10 +5,18 @@
     <string name="tabs_fragment_goods">商品</string>
     <string name="tabs_fragment_publish">发布</string>
     <string name="tabs_fragment_mine">个人</string>
-    <string name="tabs_fragment_setting">设置</string>
+    <string name="tabs_fragment_rank">排行榜</string>
     <string name="activity_goods_detail">详情</string>
-
+    <string name="activity_detail_comments">评论</string>
     <string name="test_textword">高数全套高数全套高数全套高数全套高数全套高数全套高数全套</string>
-
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_goods_detail">GoodsDetailActivity</string>
+    <string name="action_settings">setting</string>
+    <string name="title_activity_secondary_base">SecondaryBaseActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_suggestion">SuggestionActivity</string>
+    <string name="title_activity_publish">PublishActivity</string>
 
 </resources>

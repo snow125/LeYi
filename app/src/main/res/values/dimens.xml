@@ -9,6 +9,7 @@
 
     <dimen name="listview_item_height">60dp</dimen>
     <dimen name="listview_item_picture_height">40dp</dimen>
+    <dimen name="good_detail_marginleft">10dp</dimen>
     
     <dimen name="item_pic2word">10dp</dimen>
     <dimen name="item_name">17sp</dimen>

@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.PublishActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_left"
+            android:background="@color/actionbar_weight"/>
+
+        <TextView
+            android:id="@+id/actionbar_text"
+            style="@style/actionbar_weight_center"/>
+
+        <ImageView
+            android:id="@+id/actionbar_publish"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_right"
+            android:background="@color/actionbar_weight"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/camera_picture"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activity_publish_camera"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@color/actionbar_weight"/>
+
+        <ImageView
+            android:id="@+id/activity_publish_good_picture"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名称："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/activity_publish_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="描述："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/activity_publish_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="条件："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/activity_publish_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/activity_publish_publish"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="发布"
+            android:layout_width="160dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

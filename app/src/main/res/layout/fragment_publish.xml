@@ -1,13 +1,44 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.PublishFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="publish" />
+    <RelativeLayout
+        style="@style/actionbar">
 
-</FrameLayout>
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="@string/tabs_fragment_publish"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/fragment_publish_sell"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/actionbar_weight"/>
+
+    <ImageView
+        android:id="@+id/fragment_publish_shop"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/actionbar_weight"/>
+
+    <ImageView
+        android:id="@+id/fragment_publish_sell_book"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/actionbar_weight"/>
+
+    <ImageView
+        android:id="@+id/fragment_publish_shop_book"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/actionbar_weight"/>
+
+</LinearLayout>

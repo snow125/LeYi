@@ -18,6 +18,36 @@ public class GoodsDetail {
     private String name;
     private String type;
 
+    private int ownerImageId;
+    private int imageId;
+
+
+    public GoodsDetail(String ownerName, String ownerSign, String ownerTel, String hopeMemo, String description, String name, int imageId, int ownerImageId) {
+        this.ownerName = ownerName;
+        this.ownerSign = ownerSign;
+        this.ownerTel = ownerTel;
+        this.hopeMemo = hopeMemo;
+        this.description = description;
+        this.name = name;
+        this.imageId = imageId;
+        this.ownerImageId = ownerImageId;
+    }
+
+    public GoodsDetail(String ownerImageUrl, String ownerName, String ownerSign, String ownerTel, String time, long clickNum, GoodsStatus status, String hopeMemo, String description, String imageUrl, String name, String type) {
+        this.ownerImageUrl = ownerImageUrl;
+        this.ownerName = ownerName;
+        this.ownerSign = ownerSign;
+        this.ownerTel = ownerTel;
+        this.time = time;
+        this.clickNum = clickNum;
+        this.status = status;
+        this.hopeMemo = hopeMemo;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.type = type;
+    }
+
     public String getOwnerImageUrl() {
         return ownerImageUrl;
     }
@@ -112,5 +142,21 @@ public class GoodsDetail {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getOwnerImageId() {
+        return ownerImageId;
+    }
+
+    public void setOwnerImageId(int ownerImageId) {
+        this.ownerImageId = ownerImageId;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

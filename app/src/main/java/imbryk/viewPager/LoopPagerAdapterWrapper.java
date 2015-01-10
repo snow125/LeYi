@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yhd.think.leyi.imbryk.viewPager;
+package imbryk.viewPager;
 
 import android.os.Parcelable;
 import android.support.v4.app.FragmentPagerAdapter;

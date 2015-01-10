@@ -1,7 +1,9 @@
 package com.yhd.think.leyi.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +13,23 @@ import android.widget.ListView;
 import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.activity.GoodsDetailActivity;
+import com.yhd.think.leyi.activity.MainActivity;
 import com.yhd.think.leyi.adapter.GoodsAdapter;
 import com.yhd.think.leyi.data.Goods;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
+
 /**
  *
  * @author snow
  *
  */
-public class GoodsFragment extends BaseFragment {
+public class GoodsFragment extends BaseFragment /*implements PullToRefreshAttacher.OnRefreshListener*/{
 
+    private PullToRefreshAttacher mPullToRefreshAttacher;
     private View rootView;
     private ListView mListView;
     private GoodsAdapter adapter;
@@ -37,9 +43,15 @@ public class GoodsFragment extends BaseFragment {
        rootView = inflater.inflate(R.layout.fragment_goods, container, false);
        initData();
        initListView();
+       //initPull();
        initViews();
        return rootView;
     }
+
+    /*private void initPull() {
+        mPullToRefreshAttacher = ((MainActivity)getActivity()).getmPullToRefreshAttacher();
+        mPullToRefreshAttacher.setRefreshableView(mListView, this);
+    }*/
 
     private void initViews() {
         selector = rootView.findViewById(R.id.actionbar_selector);
@@ -108,4 +120,8 @@ public class GoodsFragment extends BaseFragment {
         MobclickAgent.onPageEnd("GoodsFragment");
     }
 
+    /*@Override
+    public void onRefreshStarted(View view) {
+        mPullToRefreshAttacher.setRefreshComplete();
+    }*/
 }
