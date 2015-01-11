@@ -38,7 +38,7 @@
         android:id="@+id/fragment_setting_check_update"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="检查更新"
         android:textSize="20sp"
         android:layout_height="wrap_content"/>
@@ -54,7 +54,7 @@
         android:id="@+id/fragment_setting_suggestion"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="意见"
         android:textSize="20sp"
         android:layout_height="wrap_content"/>
@@ -70,7 +70,7 @@
         android:id="@+id/fragment_setting_tel"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="客服电话"
         android:textSize="20sp"
         android:layout_height="wrap_content"/>
@@ -86,7 +86,7 @@
         android:id="@+id/fragment_setting_about"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:text="关于"
         android:textSize="20sp"
         android:layout_height="wrap_content"/>

@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.LoginActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_left"
+            android:background="@color/actionbar_weight"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="登陆"/>
+
+        <ImageView
+            android:id="@+id/actionbar_register"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_right"
+            android:background="@color/actionbar_weight"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/activity_login_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/activity_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:password="true"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/activity_login_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="登陆"
+            android:layout_width="160dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
