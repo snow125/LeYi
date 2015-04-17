@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_detail_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,7 +14,7 @@
             android:layout_width="@dimen/actionbar_weight"
             android:layout_height="@dimen/actionbar_weight"
             style="@style/actionbar_weight_left"
-            android:background="@color/actionbar_weight"/>
+            android:src="@drawable/actionbar_back"/>
 
         <TextView
             style="@style/actionbar_weight_center"
@@ -24,221 +25,78 @@
             android:layout_width="@dimen/actionbar_weight"
             android:layout_height="@dimen/actionbar_weight"
             style="@style/actionbar_weight_right"
-            android:background="@color/actionbar_weight"/>
+            android:background="@drawable/detail_save"/>
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <com.yhd.think.leyi.view.SuspendScrollView
+        android:id="@+id/activity_detail_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <imbryk.viewPager.LoopViewPager
-            android:id="@+id/activity_detail_viewpager"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp">
-        </imbryk.viewPager.LoopViewPager>
-
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/activity_detail_viewpager_pic1"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:layout_marginRight="10dp"
-                android:background="#000000"/>
-            <ImageView
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                android:id="@+id/activity_detail_viewpager_pic2"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:background="#000000"/>
+                <FrameLayout
+                    android:id="@+id/loop_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp">
+                </FrameLayout>
 
-            <ImageView
-                android:id="@+id/activity_detail_viewpager_pic3"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:layout_marginLeft="10dp"
-                android:background="#000000"/>
+                <LinearLayout
+                    android:id="@+id/info_view"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </LinearLayout>
 
-        </LinearLayout>
+                <com.yhd.think.leyi.view.ListViewInScroll
+                    android:id="@+id/activity_detail_listview_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                </com.yhd.think.leyi.view.ListViewInScroll>
 
-    </RelativeLayout>
+            </LinearLayout>
 
-    <RelativeLayout
+            <include
+                android:id="@+id/top_info_view"
+                layout="@layout/suspend">
+            </include>
+
+        </FrameLayout>
+
+    </com.yhd.think.leyi.view.SuspendScrollView>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/owner_picture"
-            android:background="@drawable/default_pic"
-            style="@style/listview_picture"
-            android:layout_width="@dimen/listview_item_picture_height"
-            android:layout_height="@dimen/listview_item_picture_height" />
-
-        <RelativeLayout
-            android:id="@+id/owner_message"
-            android:layout_marginLeft="@dimen/item_pic2word"
-            android:layout_toRightOf="@id/owner_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/owner_name"
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_textword"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:textSize="@dimen/item_name"/>
-
-            <TextView
-                android:id="@+id/owner_words"
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_textword"
-                android:layout_below="@id/owner_name"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/item_request"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <ImageView
-                android:id="@+id/onwer_tel"
-                android:layout_width="@dimen/actionbar_weight"
-                android:layout_height="@dimen/actionbar_weight"
-                android:background="@color/actionbar_weight"/>
-            <ImageView
-                android:id="@+id/onwer_message"
-                android:layout_marginLeft="10dp"
-                android:layout_width="@dimen/actionbar_weight"
-                android:layout_height="@dimen/actionbar_weight"
-                android:background="@color/actionbar_weight"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
-            android:layout_marginLeft="@dimen/good_detail_marginleft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/goods_name"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_textword"
-                android:layout_marginTop="10dp"
-                android:singleLine="true"
-                android:textSize="@dimen/item_name"/>
-
-            <TextView
-                android:id="@+id/goods_words"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:text="@string/test_textword"
-                android:layout_below="@id/goods_name"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/item_request"/>
-
-        </RelativeLayout>
-
-
-        <ImageView
-            android:id="@+id/goods_share"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_centerVertical="true"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
-            android:background="@color/actionbar_weight"/>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <TextView
-        android:id="@+id/goods_request"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/test_textword"
-        android:layout_marginTop="10dp"
-        android:textSize="@dimen/item_request"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <RelativeLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_gravity="bottom">
 
         <TextView
-            android:id="@+id/goods_comments"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/activity_detail_comments"
-            android:singleLine="true"
-            android:textSize="@dimen/item_request"/>
+            android:text="短信"/>
 
         <TextView
-            android:id="@+id/activity_detail_watch_comments"
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/goods_comments"
-            android:text="查看评论"/>
+            android:text="我要换"/>
 
-        <ImageView
-            android:id="@+id/goods_want_comment"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_centerVertical="true"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
-            android:background="@color/actionbar_weight"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="评论"/>
 
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/activity_detail_listview_comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-    </ListView>
+    </LinearLayout>
 
 </LinearLayout>

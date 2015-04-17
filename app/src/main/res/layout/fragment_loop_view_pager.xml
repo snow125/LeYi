@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".fragment.LoopViewPagerFragment">
+
+    <imbryk.viewPager.LoopViewPager
+        android:id="@+id/activity_detail_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </imbryk.viewPager.LoopViewPager>
+
+    <LinearLayout
+        android:id="@+id/activity_detail_indicate"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/one_size_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

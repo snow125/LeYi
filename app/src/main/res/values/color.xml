@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="actionbar_bg">#233333</color>
+    <color name="actionbar_bg">#00A342</color>
+    <color name="tab_selected">#00612D</color>
     <color name="actionbar_center_text_color">#ffffff</color>
     <color name="actionbar_weight">#679854</color>
-    <color name="divider">#000000</color>
+    <color name="divider">#87807B</color>
+    <color name="background_activity">#EAEAEA</color>
 </resources>

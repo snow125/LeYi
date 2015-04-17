@@ -2,17 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yhd.think.leyi.activity.ShopListActivity">
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.SaveListActivity">
 
     <RelativeLayout
         style="@style/actionbar">
 
         <ImageView
             android:id="@+id/actionbar_back"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
             style="@style/actionbar_weight_left"
-            android:background="@color/actionbar_weight"/>
+            android:background="@drawable/actionbar_back"/>
 
         <TextView
             style="@style/actionbar_weight_center"
@@ -20,10 +21,17 @@
 
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/activity_shop_listview"
-        android:layout_width="match_parent"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    </ListView>
+
+        <ListView
+            android:id="@+id/activity_shop_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

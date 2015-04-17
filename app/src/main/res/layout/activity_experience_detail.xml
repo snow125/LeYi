@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.ExperienceDetailActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_left"
+            android:background="@drawable/actionbar_back"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="@string/activity_experience_detail"/>
+
+        <ImageView
+            android:id="@+id/activity_experience_share"
+            android:layout_width="@dimen/actionbar_weight"
+            android:layout_height="@dimen/actionbar_weight"
+            style="@style/actionbar_weight_right"
+            android:background="@color/actionbar_weight"/>
+
+    </RelativeLayout>
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activity_experience_sellgood"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/activity_experience_sellword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_textword"
+            android:layout_toLeftOf="@+id/activity_experience_sellhead"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/activity_experience_sellhead"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/activity_experience_shopgood"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:id="@+id/activity_experience_shopword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_textword"
+            android:layout_toRightOf="@+id/activity_experience_shophead"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/activity_experience_shophead"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+    </RelativeLayout>
+
+    <!--<ImageView
+        android:layout_width="@dimen/actionbar_weight"
+        android:layout_height="@dimen/actionbar_weight"/>-->
+    
+    <!--<com.yhd.think.leyi.view.ListViewInScroll
+        android:id="@+id/activity_experience_listview_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.yhd.think.leyi.view.ListViewInScroll>-->
+
+    <ListView
+        android:id="@+id/activity_experience_listview_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+        <!--</LinearLayout>
+
+    </ScrollView>-->
+
+</LinearLayout>

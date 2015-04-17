@@ -10,10 +10,10 @@
 
         <ImageView
             android:id="@+id/actionbar_back"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
             style="@style/actionbar_weight_left"
-            android:background="@color/actionbar_weight"/>
+            android:background="@drawable/actionbar_back"/>
 
         <TextView
             style="@style/actionbar_weight_center"
@@ -37,9 +37,10 @@
             android:layout_marginRight="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_height="160dp" />
+            android:layout_height="160dp"
+            android:hint="对我们有什么不满意的，说吧！！！"/>
 
-        <EditText
+        <!--<EditText
             android:id="@+id/activity_suggestion_tel"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/activity_suggestion_words"
@@ -52,16 +53,19 @@
             android:layout_marginRight="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:hint="英雄留下联系方式~~~"/>-->
 
         <Button
             android:id="@+id/activity_suggestion_submit"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/activity_suggestion_tel"
+            android:layout_below="@+id/activity_suggestion_words"
             android:layout_marginTop="20dp"
             android:text="提交"
-            android:layout_width="160dp"
-            android:layout_height="40dp" />
+            android:textColor="#ffffff"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_bg"/>
 
     </RelativeLayout>
 

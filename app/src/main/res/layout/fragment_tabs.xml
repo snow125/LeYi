@@ -6,61 +6,86 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#00A342">
 
         <RelativeLayout
-            android:id="@+id/tabs_fragment_goods"
+            android:id="@+id/tabs_fragment_first"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector">
 
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/tabs_fragment_goods"/>
+                android:src="@drawable/tab_goods"
+                android:layout_marginTop="5dp"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/tabs_fragment_publish"
+            android:id="@+id/tabs_fragment_second"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector">
 
-            <TextView
+            <ImageView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/tabs_fragment_publish"/>
+                android:src="@drawable/tab_serve"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/tabs_fragment_mine"
+            android:id="@+id/tabs_fragment_third"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector">
 
-            <TextView
+            <ImageView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/tabs_fragment_mine"/>
+                android:src="@drawable/tab_publish"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/tabs_fragment_setting"
+            android:id="@+id/tabs_fragment_fourth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector">
 
-            <TextView
+            <ImageView
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/tabs_fragment_rank"/>
+                android:src="@drawable/tab_rank"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tabs_fragment_fiveth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selector">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tab_rank"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 

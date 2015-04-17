@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,8 @@ import android.widget.TextView;
 import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.activity.LoginActivity;
+import com.yhd.think.leyi.activity.ListActivity;
+import com.yhd.think.leyi.activity.SaveListActivity;
 import com.yhd.think.leyi.data.User;
 
 /**
@@ -31,6 +32,7 @@ public class MineFragment extends BaseFragment {
     private TextView word_tv;
     private TextView sell_list;
     private TextView shop_list;
+    //private ImageView menu;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,13 +63,15 @@ public class MineFragment extends BaseFragment {
         sell_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getActivity(), ListActivity.class);
+                startActivity(i);
             }
         });
         shop_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getActivity(), SaveListActivity.class);
+                startActivity(i);
             }
         });
     }

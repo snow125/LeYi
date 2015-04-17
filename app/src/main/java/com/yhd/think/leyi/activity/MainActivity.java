@@ -1,121 +1,111 @@
 package com.yhd.think.leyi.activity;
 
 import android.os.Bundle;
-import android.view.Display;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.RelativeLayout;
 
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
-import com.yhd.think.leyi.data.Constants;
 import com.yhd.think.leyi.fragment.BaseFragment;
 import com.yhd.think.leyi.fragment.GoodsFragment;
-import com.yhd.think.leyi.fragment.MineFragment;
 import com.yhd.think.leyi.fragment.PublishFragment;
 import com.yhd.think.leyi.fragment.RankFragment;
+import com.yhd.think.leyi.fragment.ServeceFragment;
 import com.yhd.think.leyi.fragment.SettingFragment;
 import com.yhd.think.leyi.fragment.TabsFragment;
+import com.yhd.think.leyi.view.HorizontalMenu;
 
-import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
+public class MainActivity extends BaseActivity implements TabsFragment.TabClickListener{
 
-public class MainActivity extends BaseActivity {
-
-    public static final int FRAGMENT_GOODS =  0;
-    public static final int FRAGMENT_PUBLISH =  1;
-    public static final int FRAGMENT_MINE =  2;
-    public static final int FRAGMENT_SETTING =  3;
-
-    //private PullToRefreshAttacher mPullToRefreshAttacher;
-    private SlidingMenu mSlidingMenu;
+    private HorizontalMenu horizontalMenu;
+    private RelativeLayout mContent;
     private SettingFragment mSettingFragment;
-    private BaseFragment[] fragments = new BaseFragment[4];
+    private BaseFragment[] fragments = new BaseFragment[TabsFragment.FRAGMENT_COUNT];
     private TabsFragment mTabsFragment = new TabsFragment(new TabsFragment.TabFactory() {
         @Override
         public BaseFragment newInstant(int index) {
             switch (index){
-                case FRAGMENT_GOODS:
+                case TabsFragment.FRAGMENT_FIRST:
                     fragments[index] = new GoodsFragment();
                     break;
-                case FRAGMENT_PUBLISH:
+                case TabsFragment.FRAGMENT_THIRD:
                     fragments[index] = new PublishFragment();
                     break;
-                case FRAGMENT_MINE:
-                    fragments[index] = new MineFragment();
+                case TabsFragment.FRAGMENT_SECOND:
+                    fragments[index] = new ServeceFragment();
                     break;
-                case FRAGMENT_SETTING:
+                case TabsFragment.FRAGMENT_FOURTH:
+                    fragments[index] = new RankFragment();
+                    break;
+                case TabsFragment.FRAGMENT_FIVETH:
                     fragments[index] = new RankFragment();
                     break;
             }
             return fragments[index];
         }
-    });
-
-    private void initSlidingMenu() {
-        WindowManager manage=getWindowManager();
-        Display display=manage.getDefaultDisplay();
-        mSlidingMenu = new SlidingMenu(this);
-        mSlidingMenu.setMode(SlidingMenu.LEFT);
-        mSlidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        //mSlidingMenu.setFadeDegree(0.35f);
-        mSlidingMenu.setFadeEnabled(false);
-        mSlidingMenu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
-        mSlidingMenu.setShadowWidth(15);
-        mSlidingMenu.setShadowDrawable(R.drawable.shadow);
-        mSlidingMenu.setBehindScrollScale(0);
-        mSlidingMenu.setBehindOffset((int) (display.getWidth()* Constants.MENU_OFFSET_PERCENTAGE));
-        mSlidingMenu.setMenu(R.layout.fragment_menu);
-    }
+    }, R.id.activity_base_fragments);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
         initFragment();
-        initSlidingMenu();
-        //setPullToRefreshAttacher();
+        setViews();
+    }
+
+    private void setViews() {
+        mContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                horizontalMenu.closeMenu();
+            }
+        });
+    }
+
+    private void findViews() {
+        horizontalMenu = (HorizontalMenu) findViewById(R.id.activity_horizon_menu);
+        mContent = (RelativeLayout) findViewById(R.id.activity_content);
     }
 
     private void initFragment() {
+        mTabsFragment.setmListener(this);
         mSettingFragment = new SettingFragment();
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.activity_tab_fragments, mTabsFragment)
-                .replace(R.id.fragment_container_menu_left, mSettingFragment)
+                .replace(R.id.activity_menu, mSettingFragment)
                 .commit();
     }
 
-    /*private void setPullToRefreshAttacher(){
-        PullToRefreshAttacher.Options options = new PullToRefreshAttacher.Options();
-        options.headerInAnimation = R.anim.pulldown_fade_in;
-        options.headerOutAnimation = R.anim.pulldown_fade_out;
-        options.refreshScrollDistance = 0.3f;
-        options.headerLayout = R.layout.pulldown_header;
-        mPullToRefreshAttacher = new PullToRefreshAttacher(MainActivity.this,options);
-    }*/
+    public HorizontalMenu getHorizontalMenu() {
+        return horizontalMenu;
+    }
 
-    /*public PullToRefreshAttacher getmPullToRefreshAttacher() {
-        return mPullToRefreshAttacher;
-    }*/
+    public void setHorizontalMenu(HorizontalMenu horizontalMenu) {
+        this.horizontalMenu = horizontalMenu;
+    }
 
     @Override
     public void onBackPressed() {
-        if(mSlidingMenu.isMenuShowing()) {
-            mSlidingMenu.toggle();
+        if(GoodsFragment.sortPop.isShowing()){
+            GoodsFragment.sortPop.dismiss();
+        }else if(ServeceFragment.sortPop!=null && ServeceFragment.sortPop.isShowing()){
+            ServeceFragment.sortPop.dismiss();
+        }else if(horizontalMenu.isOpenMenu()){
+            horizontalMenu.closeMenuAfterjudge();
         }else{
             super.onBackPressed();
         }
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
+    public void onClick(int index) {
+        if(GoodsFragment.sortPop!=null && GoodsFragment.sortPop.isShowing()){
+            GoodsFragment.sortPop.dismiss();
+        }
+        if(ServeceFragment.sortPop!=null && ServeceFragment.sortPop.isShowing()){
+            ServeceFragment.sortPop.dismiss();
+        }
+        mTabsFragment.showFragment(index);
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MobclickAgent.onPause(this);
-    }
-
 }

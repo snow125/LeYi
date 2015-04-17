@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.CommentActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
+            style="@style/actionbar_weight_left"
+            android:src="@drawable/actionbar_back"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="评论"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/activity_comment_words"
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/background_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="160dp"
+            android:hint="快写下你的看法吧~~~"/>
+
+        <Button
+            android:id="@+id/activity_comment_submit"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/activity_comment_words"
+            android:layout_marginTop="20dp"
+            android:text="提交"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_bg"
+            android:layout_width="350dp"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

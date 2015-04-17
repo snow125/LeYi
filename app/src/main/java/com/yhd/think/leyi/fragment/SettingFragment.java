@@ -8,14 +8,22 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.activity.AboutActivity;
+import com.yhd.think.leyi.activity.ListActivity;
+import com.yhd.think.leyi.activity.LoginActivity;
+import com.yhd.think.leyi.activity.MineActivity;
 import com.yhd.think.leyi.activity.SuggestionActivity;
+import com.yhd.think.leyi.data.User;
+import com.yhd.think.leyi.network.image.ImageCacheManager;
 import com.yhd.think.leyi.tools.DialogTool;
+import com.yhd.think.leyi.view.CircleImageView;
+import com.yhd.think.leyi.view.NetworkCircleImageView;
 import com.yhd.think.leyi.view.SwitchView;
 
 /**
@@ -25,6 +33,7 @@ import com.yhd.think.leyi.view.SwitchView;
  */
 public class SettingFragment extends BaseFragment {
 
+    private static User user = User.getInstance();
     private View rootView;
     private TextView checkUpdate;
     private TextView suggestion;
@@ -33,6 +42,8 @@ public class SettingFragment extends BaseFragment {
     private SwitchView swith;
     private DialogTool telDialog;
     private DialogTool updateDialog;
+    private static NetworkCircleImageView head;
+    private static TextView name;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -103,6 +114,50 @@ public class SettingFragment extends BaseFragment {
                 getMyApplication().setHavePic(isOn);
             }
         });
+        head.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(user.isLogin()){
+                    Intent i = new Intent(getActivity(), MineActivity.class);
+                    i.putExtra("ismine",true);
+                    startActivity(i);
+                }else{
+                    Intent i = new Intent(getActivity(), LoginActivity.class);
+                    startActivityForResult(i, LoginActivity.SUCCESS);
+                }
+
+            }
+        });
+        updateInfo();
+
+    }
+
+    public static void updateInfo(){
+        if(user.isLogin()){
+            head.setImageUrl(user.getFaceUrl(), ImageCacheManager.getInstance().getImageLoader());
+            head.setErrorImageResId(R.drawable.anonymous_icon);
+            head.setDefaultImageResId(R.drawable.anonymous_icon);
+            name.setText(user.getName());
+        }else{
+            //head.setBackgroundResource(R.drawable.anonymous_icon);
+            head.setImageUrl(null, ImageCacheManager.getInstance().getImageLoader());
+            head.setErrorImageResId(R.drawable.anonymous_icon);
+            head.setDefaultImageResId(R.drawable.anonymous_icon);
+            name.setText("请登录");
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == LoginActivity.SUCCESS){
+            updateInfo();
+            //SettingFragment.updateInfo();
+            GoodsFragment.updateInfo();
+            ServeceFragment.updateInfo();
+            PublishFragment.updateInfo();
+            RankFragment.updateInfo();
+        }
     }
 
     private void findViews() {
@@ -111,6 +166,8 @@ public class SettingFragment extends BaseFragment {
         tel = (TextView) rootView.findViewById(R.id.fragment_setting_tel);
         about = (TextView) rootView.findViewById(R.id.fragment_setting_about);
         swith = (SwitchView) rootView.findViewById(R.id.fragment_setting_switch);
+        head = (NetworkCircleImageView) rootView.findViewById(R.id.fragment_setting_head);
+        name = (TextView) rootView.findViewById(R.id.fragment_setting_name);
     }
 
     @Override

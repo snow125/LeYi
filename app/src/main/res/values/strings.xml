@@ -7,10 +7,11 @@
     <string name="tabs_fragment_mine">个人</string>
     <string name="tabs_fragment_rank">排行榜</string>
     <string name="activity_goods_detail">详情</string>
+    <string name="activity_experience_detail">经历</string>
     <string name="activity_detail_comments">评论</string>
     <string name="shop_list">考虑买</string>
     <string name="sell_list">准备卖</string>
-    <string name="test_textword">高数全套高数全套高数全套高数全套高数全套高数全套高数全套</string>
+    <string name="test_textword">高高数套</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="title_activity_goods_detail">GoodsDetailActivity</string>
     <string name="action_settings">setting</string>
@@ -23,5 +24,15 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_shop_list">ShopListActivity</string>
+    <string name="title_activity_sell_list">SellListActivity</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="title_activity_popup">PopupActivity</string>
+    <string name="title_activity_experience_detail">ExperienceDetailActivity</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_mine">MineActivity</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_photo">PhotoActivity</string>
+    <string name="title_activity_base_take_photo">BaseTakePhotoActivity</string>
 
 </resources>

@@ -5,90 +5,250 @@
     android:orientation="vertical"
     tools:context=".fragment.SettingFragment">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/fragment_mine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <com.yhd.think.leyi.view.NetworkCircleImageView
+            android:id="@+id/fragment_setting_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/default_pic"/>
+
+        <TextView
+            android:id="@+id/fragment_setting_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="asdf"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_setting_user_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_textword"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/has_sell"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已换"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/good_ing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在换物品"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/service_ing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在换服务"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/save_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/fragment_mine"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/good_detail_marginleft"
+                android:layout_width="wrap_content"
+                android:text="无图模式"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"/>
+
+            <com.yhd.think.leyi.view.SwitchView
+                android:id="@+id/fragment_setting_switch"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/good_detail_marginleft"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_marginLeft="@dimen/good_detail_marginleft"
-            android:layout_width="wrap_content"
-            android:text="无图模式"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+        <TextView
+            android:id="@+id/fragment_setting_check_update"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:text="检查更新"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
-        <com.yhd.think.leyi.view.SwitchView
-            android:id="@+id/fragment_setting_switch"
+        <TextView
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/good_detail_marginleft"
-            android:layout_height="wrap_content" />
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+        <TextView
+            android:id="@+id/fragment_setting_suggestion"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:text="意见"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+        <TextView
+            android:id="@+id/fragment_setting_tel"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:text="客服电话"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+        <TextView
+            android:id="@+id/fragment_setting_about"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/good_detail_marginleft"
+            android:layout_width="match_parent"
+            android:text="关于"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/activity_mine_exit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="退出登录"
+            android:textColor="#ffffff"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_bg"/>
 
     </RelativeLayout>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <TextView
-        android:id="@+id/fragment_setting_check_update"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:text="检查更新"
-        android:textSize="20sp"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <TextView
-        android:id="@+id/fragment_setting_suggestion"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:text="意见"
-        android:textSize="20sp"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <TextView
-        android:id="@+id/fragment_setting_tel"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:text="客服电话"
-        android:textSize="20sp"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
-
-    <TextView
-        android:id="@+id/fragment_setting_about"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/good_detail_marginleft"
-        android:layout_width="match_parent"
-        android:text="关于"
-        android:textSize="20sp"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>

@@ -5,7 +5,10 @@
     <dimen name="activity_tabs">48dp</dimen>
     <dimen name="actionbar_center_text">18sp</dimen>
     <dimen name="actionbar_margin">10dp</dimen>
-    <dimen name="actionbar_weight">30dp</dimen>
+    <dimen name="actionbar_weight">20dp</dimen>
+    <dimen name="activity_weight">30dp</dimen>
+    <dimen name="actionbar_back_width">20dp</dimen>
+    <dimen name="actionbar_back_height">20dp</dimen>
 
     <dimen name="listview_item_height">60dp</dimen>
     <dimen name="listview_item_picture_height">40dp</dimen>

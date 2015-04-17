@@ -9,10 +9,10 @@
 
         <ImageView
             android:id="@+id/actionbar_back"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
             style="@style/actionbar_weight_left"
-            android:background="@color/actionbar_weight"/>
+            android:background="@drawable/actionbar_back"/>
 
         <TextView
             style="@style/actionbar_weight_center"

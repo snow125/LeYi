@@ -2,12 +2,15 @@ package com.yhd.think.leyi.fragment;
 
 
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 
 import com.yhd.think.leyi.R;
+import com.yhd.think.leyi.activity.MainActivity;
 import com.yhd.think.leyi.context.MainApplication;
+import com.yhd.think.leyi.view.HorizontalMenu;
 
 import java.lang.reflect.Field;
 
@@ -16,6 +19,14 @@ import java.lang.reflect.Field;
  *
  */
 public class BaseFragment extends Fragment {
+
+    protected HorizontalMenu horizontalMenu;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        horizontalMenu = ((MainActivity)activity).getHorizontalMenu();
+    }
 
     @Override
     public void onDetach() {

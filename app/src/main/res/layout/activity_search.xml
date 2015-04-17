@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yhd.think.leyi.activity.SearchActivity">
+
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
+            style="@style/actionbar_weight_left"
+            android:background="@drawable/actionbar_back"/>
+
+        <EditText
+            android:id="@+id/activity_search_editext"
+            android:layout_toRightOf="@+id/actionbar_back"
+            android:layout_toLeftOf="@+id/activity_search_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入物品名称"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_edittext"/>
+
+        <TextView
+            android:id="@+id/activity_search_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:textColor="#ffffff"
+            style="@style/actionbar_weight_right"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/push_good"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/activity_search_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>

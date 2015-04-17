@@ -14,6 +14,10 @@ public class User {
     private Bitmap face;
     private String faceUrl;
     private boolean isLogin;
+    private String city;
+    private String tel;
+    private String password;
+    private int id;
 
     private static User user;
 
@@ -27,8 +31,10 @@ public class User {
             name = loadString(Constants.SP_NAME);
             words = loadString(Constants.SP_WORD);
             faceUrl = loadString(Constants.SP_FACEURL);
-
             face = getFace();
+            id = loadInt(Constants.SP_ID);
+            tel = loadString(Constants.SP_TEL);
+            password = loadString(Constants.SP_PASSWORD);
         }
     }
 
@@ -37,6 +43,33 @@ public class User {
             user = new User();
         }
         return user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+        save(Constants.SP_ID, id);
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+        save(Constants.SP_PASSWORD, password);
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+        save(Constants.SP_TEL, tel);
     }
 
     public boolean isLogin() {

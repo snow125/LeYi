@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.activity.PublishActivity;
+import com.yhd.think.leyi.data.User;
+import com.yhd.think.leyi.network.image.ImageCacheManager;
+import com.yhd.think.leyi.view.NetworkCircleImageView;
 
 /**
  *
@@ -21,11 +24,11 @@ import com.yhd.think.leyi.activity.PublishActivity;
  */
 public class PublishFragment extends BaseFragment {
 
+    private static User user = User.getInstance();
     private View rootView;
     private ImageView sell;
     private ImageView shop;
-    private ImageView sellBook;
-    private ImageView shopBook;
+    private static NetworkCircleImageView menu;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,33 +52,26 @@ public class PublishFragment extends BaseFragment {
                 startAct("买",false,false);
             }
         });
-        sellBook.setOnClickListener(new View.OnClickListener() {
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAct("卖书",true,true);
+                horizontalMenu.switchMenu();
             }
         });
-        shopBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startAct("买书",false,true);
-            }
-        });
+        updateInfo();
     }
 
     private void startAct(String title, boolean isSell, boolean isBook){
         Intent i = new Intent(getActivity(), PublishActivity.class);
-        i.putExtra("isBook",isBook);
         i.putExtra("isSell",isSell);
         i.putExtra("title",title);
         startActivity(i);
     }
 
     private void findViews() {
+        menu = (NetworkCircleImageView) rootView.findViewById(R.id.actionbar_menu);
         sell = (ImageView) rootView.findViewById(R.id.fragment_publish_sell);
         shop = (ImageView) rootView.findViewById(R.id.fragment_publish_shop);
-        sellBook = (ImageView) rootView.findViewById(R.id.fragment_publish_sell_book);
-        shopBook = (ImageView) rootView.findViewById(R.id.fragment_publish_shop_book);
     }
 
     @Override
@@ -88,6 +84,22 @@ public class PublishFragment extends BaseFragment {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd("PublishFragment");
+    }
+
+    public static void updateInfo(){
+        if(user.isLogin()){
+            if(menu!=null){
+                menu.setImageUrl(user.getFaceUrl(), ImageCacheManager.getInstance().getImageLoader());
+                menu.setErrorImageResId(R.drawable.anonymous_icon);
+                menu.setDefaultImageResId(R.drawable.anonymous_icon);
+            }
+        }else{
+            if(menu!=null){
+                menu.setImageUrl(null, ImageCacheManager.getInstance().getImageLoader());
+                menu.setErrorImageResId(R.drawable.anonymous_icon);
+                menu.setDefaultImageResId(R.drawable.anonymous_icon);
+            }
+        }
     }
 
 }

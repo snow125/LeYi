@@ -63,6 +63,16 @@ public class GoodCommentAdapter extends BaseAdapter {
         return convertView;
     }
 
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
     private class ViewHolder{
         View picture;
         TextView comment;

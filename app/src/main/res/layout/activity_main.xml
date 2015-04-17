@@ -4,18 +4,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/activity_base_fragments"
-        android:layout_above="@+id/activity_tab_fragments"
+    <com.yhd.think.leyi.view.HorizontalMenu
+        android:id="@+id/activity_horizon_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:scrollbars="none"
+        android:layout_height="match_parent"
+        android:background="#D2CDC8">
 
-    <FrameLayout
-        android:id="@+id/activity_tab_fragments"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_tabs">
-    </FrameLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/activity_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/activity_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/activity_base_fragments"
+                    android:layout_above="@+id/activity_tab_fragments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/activity_tab_fragments"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_tabs">
+                </FrameLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.yhd.think.leyi.view.HorizontalMenu>
 
 </RelativeLayout>

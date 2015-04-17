@@ -1,14 +1,15 @@
 package com.yhd.think.leyi.data;
 
 /**
- * Created by Think on 2015/1/6.
+ * Created by snow on 2015/1/6.
  */
 public class Comment {
 
     private String ownerName;
     private String ownerConmment;
-    private int ownerPic;
     private String ownerUrl;
+
+    private int ownerPic;
 
     public Comment(String ownerName, String ownerConmment, int ownerPic) {
         this.ownerName = ownerName;

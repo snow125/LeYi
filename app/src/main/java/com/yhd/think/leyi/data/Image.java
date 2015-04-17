@@ -1,14 +1,26 @@
 package com.yhd.think.leyi.data;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by snow on 2015/1/5.
  */
 public class Image {
 
     private String url;
+    private Bitmap bitmap;
+
+    public Image(String url, Bitmap bitmap) {
+        this.url = url;
+        this.bitmap = bitmap;
+    }
 
     public Image(String url) {
         this.url = url;
+    }
+
+    public Image(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 
     public String getUrl() {
@@ -19,20 +31,11 @@ public class Image {
         this.url = url;
     }
 
-    /**
-     * 测试使用
-     */
-    private int resId;
-
-    public Image(int resId) {
-        this.resId = resId;
+    public Bitmap getBitmap() {
+        return bitmap;
     }
 
-    public int getResId() {
-        return resId;
-    }
-
-    public void setResId(int resId) {
-        this.resId = resId;
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 }
