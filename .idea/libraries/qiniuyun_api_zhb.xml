@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="qiniuyun-api-zhb">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/qiniuyun-api-zhb.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
