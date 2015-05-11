@@ -26,13 +26,14 @@ public class BaseFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         horizontalMenu = ((MainActivity)activity).getHorizontalMenu();
+
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         try {
-            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
+            Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");//嵌套fragment管理器==null？？？
             childFragmentManager.setAccessible(true);
             childFragmentManager.set(this, null);
 

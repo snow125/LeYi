@@ -24,10 +24,10 @@ public class User {
     public static void init(Context _context){
         context = _context;
     }
-
+    //loadXXX获取信息
     private User(){
         isLogin = loadBoolean(Constants.SP_LOGIN);
-        if(isLogin()){
+        if(isLogin()){  //如果登录获取数据
             name = loadString(Constants.SP_NAME);
             words = loadString(Constants.SP_WORD);
             faceUrl = loadString(Constants.SP_FACEURL);
