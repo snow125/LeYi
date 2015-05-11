@@ -24,7 +24,7 @@ public class TextTool {
         return space2add(urlEncode(inStr));
     }
 
-    public static String space2add(String inStr){
+    public static String space2add(String inStr){  //???把第一个空格换成+？？
         char[] inChar = inStr.toCharArray();
         char[] midChar = new char[inChar.length];
         boolean once = false;

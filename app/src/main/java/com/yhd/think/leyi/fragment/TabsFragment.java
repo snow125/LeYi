@@ -15,16 +15,16 @@ import com.yhd.think.leyi.activity.MainActivity;
  * @author snow
  */
 public class TabsFragment extends Fragment implements View.OnClickListener{
-
+    //最下层的五个按钮id
     public static final int FRAGMENT_FIRST =  0;
     public static final int FRAGMENT_SECOND =  1;
     public static final int FRAGMENT_THIRD =  2;
     public static final int FRAGMENT_FOURTH =  3;
     public static final int FRAGMENT_FIVETH =  4;
-    public static final int FRAGMENT_COUNT = 5;
+    public static final int FRAGMENT_COUNT = 5; //按钮的数量
 
     private View rootView;
-
+    //五个按钮布局？？？
     private RelativeLayout rl_first;
     private RelativeLayout rl_second;
     private RelativeLayout rl_third;
@@ -33,17 +33,17 @@ public class TabsFragment extends Fragment implements View.OnClickListener{
 
     private TabFactory mFactory;
     private TabClickListener mListener;
-    private BaseFragment[] mFragments;
+    private BaseFragment[] mFragments; //中间的fragment
 
-    private int resId;
-    private int defaultItem = 0;
-    private int currentItem;
+    private int resId; //fragment布局
+    private int defaultItem = 0;//默认显示的Fragment
+    private int currentItem; //当前显示的Fragment
 
     public interface TabFactory{
         public BaseFragment newInstant(int index);
     }
 
-    public interface TabClickListener{
+    public interface TabClickListener{  //按钮监听器
         public void onClick(int index);
     }
 
@@ -62,7 +62,7 @@ public class TabsFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_tabs, container, false);
+        rootView = inflater.inflate(R.layout.fragment_tabs, container, false);//加载五个按钮
         findViews();
         setViews();
         showFragment(defaultItem);
@@ -86,7 +86,7 @@ public class TabsFragment extends Fragment implements View.OnClickListener{
     }
 
     private synchronized void selectTab(int index){
-        setAllNotClicked();
+        setAllNotClicked();//按钮清零
         switch (index){
             case FRAGMENT_FIRST:
                 rl_first.setSelected(true);
@@ -151,7 +151,7 @@ public class TabsFragment extends Fragment implements View.OnClickListener{
 
     public TabFactory getmFactory() {
         return mFactory;
-    }
+    }//为什么不是静态的??
 
     public void setmFactory(TabFactory mFactory) {
         this.mFactory = mFactory;

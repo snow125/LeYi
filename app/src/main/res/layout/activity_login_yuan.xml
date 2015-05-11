@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f8f8f8"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:id="@+id/activity_login_logo_yuan"
+        android:layout_centerHorizontal="true"
+        />
+       <EditText
+           android:paddingLeft="10dp"
+           android:inputType="text"
+           android:paddingTop="5dp"
+           android:id="@+id/activity_login_username_yuan"
+           android:layout_below="@id/activity_login_logo_yuan"
+           android:layout_width="250dp"
+           android:layout_height="46dp"
+           android:hint="手机号/用户名"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="30dp"
+           android:textSize="18sp"
+           android:background="@drawable/beautiful_up_text"
+           />
+        <EditText
+            android:background="@drawable/beautiful_down_text"
+            android:paddingTop="1dp"
+            android:layout_marginTop="0dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/activity_login_password_yuan"
+            android:inputType="textPassword"
+            android:layout_below="@id/activity_login_username_yuan"
+            android:layout_width="250dp"
+            android:layout_height="46dp"
+            android:hint="密码"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/activity_login_password_yuan"
+            android:layout_centerHorizontal="true"
+            android:background="@color/light_button"
+            android:text="登录"
+            android:textSize="25dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/activity_login_login_yuan"
+            />
+        
+        <TextView
+            android:id="@+id/activity_login_qq_login_yuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/qq_logo"
+            android:layout_below="@id/activity_login_login_yuan"
+            android:textSize="12sp"
+            android:text="QQ账号登陆"
+            android:layout_marginTop="50dp"
+            android:layout_alignLeft="@id/activity_login_login_yuan"
+            />
+        <TextView
+            android:id="@+id/activity_login_weixin_login_yuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/weixn_logo"
+            android:layout_below="@id/activity_login_login_yuan"
+            android:textSize="12sp"
+            android:text="微信账号登陆"
+            android:layout_marginTop="50dp"
+            android:layout_alignRight="@id/activity_login_login_yuan"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_login_find_password_yuan"
+            android:text="找回密码 "
+            android:textSize="13sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/activity_login_login_yuan"
+            android:layout_alignRight="@id/activity_login_password_yuan"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_login_fast_register_yuan"
+            android:text="快速登录"
+            android:textSize="13sp"
+            android:layout_alignTop="@id/activity_login_find_password_yuan"
+            android:layout_alignLeft="@id/activity_login_password_yuan"
+             />
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

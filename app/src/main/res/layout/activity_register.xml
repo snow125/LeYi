@@ -17,7 +17,7 @@
 
         <TextView
             style="@style/actionbar_weight_center"
-            android:text="注册"/>
+            android:text="注册易趣"/>
 
     </RelativeLayout>
 

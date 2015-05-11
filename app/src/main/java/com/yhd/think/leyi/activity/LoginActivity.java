@@ -21,10 +21,8 @@ import com.yhd.think.leyi.data.User;
 import com.yhd.think.leyi.tools.TextTool;
 import com.yhd.think.leyi.tools.ToastTool;
 import com.yhd.think.leyi.view.LoadingFooter;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,15 +35,21 @@ public class LoginActivity extends BaseActivity {
     private String password;
     private EditText password_et;
     private Button login_b;
-    private ImageView back;
+    //private ImageView back;
     private TextView register;
+
+    private TextView qq_login;     //尚未处理
+    private TextView weixin_login;  //尚未处理
+    private TextView find_password; //尚未处理
+
+
 
     private String loginUrl = Constants.BASE_URL + "login.action?userName=%s&pwd=%s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_yuan);
         findViews();
         setViews();
     }
@@ -58,12 +62,13 @@ public class LoginActivity extends BaseActivity {
                 parseJSON();
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
+       /* back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        */
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,11 +146,20 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void findViews() {
-        register = (TextView) findViewById(R.id.actionbar_register);
-        back = (ImageView) findViewById(R.id.actionbar_back);
-        login_b = (Button) findViewById(R.id.activity_login_login);
-        name_et = (EditText) findViewById(R.id.activity_login_name);
-        password_et = (EditText) findViewById(R.id.activity_login_password);
-    }
+//        register = (TextView) findViewById(R.id.actionbar_register);
+//    back = (ImageView) findViewById(R.id.actionbar_back);
+//    login_b = (Button) findViewById(R.id.activity_login_login);
+//    name_et = (EditText) findViewById(R.id.activity_login_name);
+//    password_et = (EditText) findViewById(R.id.activity_login_password);
+
+        register = (TextView) findViewById(R.id.activity_login_fast_register_yuan);
+        login_b = (Button) findViewById(R.id.activity_login_login_yuan);
+        name_et = (EditText) findViewById(R.id.activity_login_username_yuan);
+        password_et = (EditText) findViewById(R.id.activity_login_password_yuan);
+        //新加的，尚未处理点击事件
+        qq_login=(TextView)findViewById(R.id.activity_login_qq_login_yuan);
+        weixin_login=(TextView)findViewById(R.id.activity_login_weixin_login_yuan);
+        find_password=(TextView)findViewById(R.id.activity_login_find_password_yuan);
+}
 
 }

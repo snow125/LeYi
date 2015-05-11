@@ -2,24 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/activity_tabs"
-    tools:context=".fragment.TabsFragment">
+    tools:context=".fragment.TabsFragment"
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00A342">
+        >
 
         <RelativeLayout
             android:id="@+id/tabs_fragment_first"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_selector">
+            android:background="@drawable/tab_selector_yuan"
+            android:gravity="center"
+            >
 
             <ImageView
+                android:id="@+id/goods"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_goods"
                 android:layout_marginTop="5dp"
                 android:layout_centerInParent="true"/>
 
@@ -30,29 +34,30 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_selector">
+            android:background="@drawable/tab_selector_yuan">
 
             <ImageView
+                android:id="@+id/message"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_serve"
-                android:layout_centerInParent="true"/>
-
+                android:src="@drawable/tab_message_yuan"
+                android:layout_centerInParent="true"
+                />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/tabs_fragment_third"
-            android:layout_width="0dp"
+            android:layout_width="5dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_selector">
+            android:background="@drawable/tab_selector_yuan">
 
             <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_publish"
+                android:src="@drawable/tab_publish_yuan"
                 android:layout_centerInParent="true"/>
 
         </RelativeLayout>
@@ -62,13 +67,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_selector">
+            android:background="@drawable/tab_selector_yuan">
 
             <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_rank"
+                android:src="@drawable/tab_psersonal_yuan"
                 android:layout_centerInParent="true"/>
 
         </RelativeLayout>
@@ -78,14 +83,15 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/tab_selector">
+            android:background="@drawable/tab_selector_yuan">
 
             <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_rank"
-                android:layout_centerInParent="true"/>
+                android:src="@drawable/tab_interest_yuan"
+                android:layout_centerInParent="true"
+                />
 
         </RelativeLayout>
 

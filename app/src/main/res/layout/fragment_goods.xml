@@ -3,34 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffffff"
-    tools:context=".fragment.GoodsFragment">
+    tools:context=".fragment.GoodsFragment"
+    android:background="@color/main_color"
+    >
 
     <RelativeLayout
         style="@style/actionbar">
 
         <com.yhd.think.leyi.view.NetworkCircleImageView
             android:id="@+id/actionbar_menu"
-            android:layout_width="@dimen/actionbar_weight"
-            android:layout_height="@dimen/actionbar_weight"
-            style="@style/actionbar_weight_left"/>
+            android:layout_width="@dimen/actionbar_weight_yuan"
+            android:layout_height="@dimen/actionbar_weight_yuan"
+            style="@style/actionbar_weight_left"
+            />
 
         <TextView
+            android:layout_toRightOf="@id/actionbar_menu"
             style="@style/actionbar_weight_center"
-            android:text="@string/tabs_fragment_goods"/>
+            android:text="@string/myapp_name"
+            android:layout_marginLeft="20dp"
+            />
 
         <ImageView
             android:id="@+id/actionbar_search"
             android:layout_width="@dimen/actionbar_weight"
             android:layout_height="@dimen/actionbar_weight"
-            android:src="@drawable/actionbar_search"
+            android:src="@drawable/actionbar_search_yuan"
             android:layout_toLeftOf="@+id/iv_school"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"/>
 
         <ImageView
             android:id="@+id/iv_school"
-            android:src="@drawable/actionbar_search"
+            android:src="@drawable/location"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -38,65 +43,73 @@
             android:layout_height="@dimen/actionbar_weight" />
 
     </RelativeLayout>
+    <!--一下暂时不显示-->
+        <LinearLayout
+            android:id="@+id/sort"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            >
+            <!--android:layout_height="@dimen/activity_tabs"-->
+            <RelativeLayout
+                android:id="@+id/fragment_goods_location"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0">
 
-    <LinearLayout
-        android:id="@+id/sort"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_tabs">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/city"/>
 
-        <RelativeLayout
-            android:id="@+id/fragment_goods_location"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            </RelativeLayout>
 
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/city"/>
+           <RelativeLayout
+                android:id="@+id/fragment_goods_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/species"/>
 
-        <RelativeLayout
-            android:id="@+id/fragment_goods_type"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            </RelativeLayout>
 
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/species"/>
+            <RelativeLayout
+                android:id="@+id/fragment_goods_sort"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sort"/>
 
-        <RelativeLayout
-            android:id="@+id/fragment_goods_sort"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/sort"/>
-
-        </RelativeLayout>
+            </RelativeLayout>
 
 
-    </LinearLayout>
+        </LinearLayout>
+        <!--以上中间部分暂时不显示,宽高都已经设为0-->
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/beautiful_fragment"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <LinearLayout
                 android:orientation="vertical"
@@ -110,13 +123,15 @@
                     android:layout_height="40dp"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"
-                    android:src="@drawable/books"/>
+                    android:src="@drawable/books_yuan"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="书籍"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 
@@ -124,13 +139,14 @@
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <ImageView
                     android:id="@+id/pe_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/sports"
+                    android:src="@drawable/sports_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -138,7 +154,8 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="文体"/>
+                    android:text="文体"
+                    android:textColor="#b1b1b1"/>
 
             </LinearLayout>
 
@@ -152,7 +169,7 @@
                     android:id="@+id/live_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/commodities"
+                    android:src="@drawable/commodities_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -160,7 +177,8 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="生活用品"/>
+                    android:text="生活用品"
+                    android:textColor="#b1b1b1"/>
 
             </LinearLayout>
 
@@ -168,13 +186,14 @@
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <ImageView
                     android:id="@+id/c3c_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/c3c"
+                    android:src="@drawable/c3c_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -182,7 +201,9 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="数码/电器"/>
+                    android:text="数码/电器"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 
@@ -190,7 +211,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            >
 
             <LinearLayout
                 android:orientation="vertical"
@@ -204,13 +227,15 @@
                     android:layout_height="40dp"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"
-                    android:src="@drawable/clothing"/>
+                    android:src="@drawable/clothing_yuan"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="服装"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 
@@ -224,7 +249,7 @@
                     android:id="@+id/small_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/fineones"
+                    android:src="@drawable/fineones_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -232,7 +257,9 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="小玩意"/>
+                    android:text="小玩意"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 
@@ -246,7 +273,7 @@
                     android:id="@+id/food_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/foods"
+                    android:src="@drawable/foods_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -254,7 +281,9 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="食品"/>
+                    android:text="食品"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 
@@ -268,7 +297,7 @@
                     android:id="@+id/other_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/others"
+                    android:src="@drawable/others_yuan"
                     android:scaleType="centerCrop"
                     android:layout_gravity="center"/>
 
@@ -276,7 +305,9 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="其他"/>
+                    android:text="其他"
+                    android:textColor="#b1b1b1"
+                    />
 
             </LinearLayout>
 

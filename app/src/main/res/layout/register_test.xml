@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        style="@style/actionbar">
+
+        <ImageView
+            android:id="@+id/actionbar_back"
+            android:layout_width="@dimen/actionbar_back_width"
+            android:layout_height="@dimen/actionbar_back_height"
+            style="@style/actionbar_weight_left"
+            android:background="@drawable/actionbar_back"/>
+
+        <TextView
+            style="@style/actionbar_weight_center"
+            android:text="注册易趣"/>
+
+    </RelativeLayout>
+
+<EditText
+    android:id="@+id/activity_register_name"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginLeft="19dp"
+    android:layout_marginRight="10dp"
+    android:hint="请输入用户名，英文、汉字，3字符以上"
+    android:textSize="17sp"
+    android:background="@drawable/background_edittext"
+    android:paddingLeft="20dp"
+    android:paddingRight="10dp"
+    android:layout_marginTop="40dp"
+    />
+    <EditText
+        android:id="@+id/activity_register_tel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="10dp"
+        android:hint="请输入11位手机号"
+        android:textSize="17sp"
+        android:background="@drawable/background_edittext"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="40dp"
+        />
+    <EditText
+        android:id="@+id/activity_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:hint="请输入密码，6位以上，字母数字混合"
+        android:textSize="17sp"
+        android:background="@drawable/background_edittext"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:password="true"
+        android:layout_marginTop="40dp"
+        />
+    <EditText
+        android:id="@+id/activity_register_repeat_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:hint="请再输入一遍密码"
+        android:textSize="17sp"
+        android:background="@drawable/background_edittext"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:password="true"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/activity_register_register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="注册"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_bg"/>
+
+</LinearLayout>

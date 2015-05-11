@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
@@ -55,7 +54,7 @@ dependencies {
     compile files('libs/android-async-http-1.4.6.jar')
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // You must install or update the Support Repository through the SDK manager to use this dependency.
-    compile 'com.umeng.analytics:analytics:latest.integration'
+    //compile 'com.umeng.analytics:analytics:latest.integration'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v4:19.+'
     compile 'com.android.support:appcompat-v7:19.+'
@@ -64,9 +63,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:recyclerview-v7:21.0.0'
 
-    //compile 'com.android.support:appcompat-v7:21.0.0'
-    //compile 'com.android.support:support-v13:21.0.0'
-    //compile 'com.android.support:support-v4:21.0.0'
+
 
     compile 'com.android.support:support-annotations:21.0.0'
 }

@@ -121,6 +121,9 @@ public class GoodsFragment extends BaseFragment implements SwipeRefreshLayout.On
                 }
             }
         });
+
+
+
     }
 
     private void initAddressPop() {
@@ -243,6 +246,7 @@ public class GoodsFragment extends BaseFragment implements SwipeRefreshLayout.On
                 }
             }
         });
+       // location_iv = (RelativeLayout) rootView.findViewById(R.id.fragment_goods_location);
         location_iv = (RelativeLayout) rootView.findViewById(R.id.fragment_goods_location);
         location_iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -495,14 +499,14 @@ public class GoodsFragment extends BaseFragment implements SwipeRefreshLayout.On
         if(user.isLogin()){
             if(menu!=null){
                 menu.setImageUrl(user.getFaceUrl(), ImageCacheManager.getInstance().getImageLoader());
-                menu.setErrorImageResId(R.drawable.anonymous_icon);
-                menu.setDefaultImageResId(R.drawable.anonymous_icon);
+                menu.setErrorImageResId(R.drawable.anonymous_icon_yuan);
+                menu.setDefaultImageResId(R.drawable.anonymous_icon_yuan);
             }
         }else{
             if(menu!=null){
-                menu.setBackgroundResource(R.drawable.anonymous_icon);
-                menu.setErrorImageResId(R.drawable.anonymous_icon);
-                menu.setDefaultImageResId(R.drawable.anonymous_icon);
+                menu.setBackgroundResource(R.drawable.anonymous_icon_yuan);
+                menu.setErrorImageResId(R.drawable.anonymous_icon_yuan);
+                menu.setDefaultImageResId(R.drawable.anonymous_icon_yuan);
             }
         }
     }

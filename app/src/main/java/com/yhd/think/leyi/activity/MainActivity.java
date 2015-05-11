@@ -64,8 +64,8 @@ public class MainActivity extends BaseActivity implements TabsFragment.TabClickL
     }
 
     private void findViews() {
-        horizontalMenu = (HorizontalMenu) findViewById(R.id.activity_horizon_menu);
-        mContent = (RelativeLayout) findViewById(R.id.activity_content);
+        horizontalMenu = (HorizontalMenu)findViewById(R.id.activity_horizon_menu);
+        mContent = (RelativeLayout)findViewById(R.id.activity_content);
     }
 
     private void initFragment() {
