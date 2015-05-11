@@ -122,10 +122,12 @@ public class TabsFragment extends Fragment implements View.OnClickListener{
             mFragments[index] = mFactory.newInstant(index);
         }
         selectTab(index);
-        getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(resId, mFragments[index])
-                .commit();
-        currentItem = index;
+        if(!mFragments[index].isAdded()){
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(resId, mFragments[index])
+                    .commit();
+            currentItem = index;
+        }
     }
 
     @Override

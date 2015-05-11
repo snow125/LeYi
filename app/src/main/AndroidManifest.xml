@@ -59,6 +59,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 允许应用读取低级别的系统日志文件 -->
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".context.MainApplication"
@@ -72,6 +73,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <data android:host="com.yhd.think.leyi" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -79,6 +82,155 @@
             android:name=".activity.BaseActivity"
             android:label="@string/title_activity_base" >
         </activity>
+
+        <!-- 融云 -->
+        <meta-data
+            android:name="RONG_CLOUD_APP_KEY"
+            android:value="c9kqb3rdkh2aj" />
+
+        <service android:name="io.rong.imlib.RongService" />
+
+        <activity
+            android:name="io.rong.imkit.RongActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:pathPrefix="/conversationsetting/"
+                    android:scheme="rong" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:path="/grouplist"
+                    android:scheme="rong" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:path="/conversationgrouplist"
+                    android:scheme="rong" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:pathPrefix="/friend/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!-- conversationlist -->
+        <activity
+            android:name=".activity.ConversationListActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:path="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!-- conversation -->
+        <activity
+            android:name=".activity.ConversationActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.rong.voipkit.activity.CallSideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.rong.voipkit.activity.CalledSideActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="io.rong.voipkit.calledSideActivity.action" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.yhd.think.leyi"
+                    android:path="/calledsideactivity"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="io.rong.imkit.service.RongIMService"
+            android:enabled="true"
+            android:exported="false"
+            android:priority="1000" />
+        <service
+            android:name="io.rong.imlib.push.PushService"
+            android:process="io.rong.push" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="io.rong.push" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="io.rong.imlib.push.CommandService"
+            android:process="io.rong.push" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="io.rong.command" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="io.rong.imlib.push.PushReceiver"
+            android:process="io.rong.push" >
+            <intent-filter>
+                <action android:name="io.rong.imlib.action.push.heartbeat" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="io.rong.imlib.push.PushMessageReceiver" >
+            <intent-filter>
+                <action android:name="io.rong.push.message" />
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -189,9 +341,23 @@
             android:name=".activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
-        <!--<activity
+        <!--
+        <activity
             android:name="com.yhd.think.leyi.activity.BaseTakePhotoActivity"
             android:label="@string/title_activity_base_take_photo" >
+        </activity>
+        -->
+        <activity
+            android:name=".activity.IMActivity"
+            android:label="@string/title_activity_im" >
+        </activity>
+        <!--<activity
+            android:name=".activity.ConversationActivity"
+            android:label="@string/title_activity_conversation" >
+        </activity>
+        <activity
+            android:name=".activity.ConversationListActivity"
+            android:label="@string/title_activity_conversation_list" >
         </activity>-->
     </application>
 

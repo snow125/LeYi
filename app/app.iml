@@ -84,8 +84,8 @@
     <orderEntry type="library" exported="" name="android-async-http-1.4.6" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_shake" level="project" />
-    <orderEntry type="library" exported="" name="analytics-5.2.4" level="project" />
     <orderEntry type="library" exported="" name="android_api_1.1_forsdk" level="project" />
+    <orderEntry type="library" exported="" name="Rong_IMKit_v1_4_4" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="qiniuyun-api-zhb" level="project" />
   </component>

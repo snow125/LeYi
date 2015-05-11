@@ -12,9 +12,11 @@ public class ToastTool {
     public static Toast toast;
 
     public static void showToast(Context context, String text) {
-        toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
+        if(context != null){
+            toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
     }
 
 }

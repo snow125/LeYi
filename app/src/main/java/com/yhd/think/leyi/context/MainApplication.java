@@ -13,6 +13,8 @@ import com.yhd.think.leyi.network.image.ImageCacheManager;
 import com.yhd.think.leyi.tools.DialogTool;
 import com.yhd.think.leyi.tools.SharedPrefsUtil;
 
+import io.rong.imkit.RongIM;
+
 
 /**
  * Created by snow on 2015/1/2.
@@ -49,6 +51,7 @@ public class MainApplication extends Application {
         MobclickAgent.updateOnlineConfig(this);
         MobclickAgent.setDebugMode(true);
 
+        RongIM.init(this);
         //SDKInitializer.initialize(this);
     }
 

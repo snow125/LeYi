@@ -25,6 +25,7 @@ import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.R;
 import com.yhd.think.leyi.activity.BaseActivity;
 import com.yhd.think.leyi.activity.GoodsDetailActivity;
+import com.yhd.think.leyi.activity.IMActivity;
 import com.yhd.think.leyi.activity.SearchActivity;
 import com.yhd.think.leyi.adapter.GoodsAdapter;
 import com.yhd.think.leyi.data.Constants;
@@ -223,8 +224,10 @@ public class GoodsFragment extends BaseFragment implements SwipeRefreshLayout.On
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SearchActivity.class);
-                startActivityForResult(i, SearchActivity.SEARCH_FINISH);
+                /*Intent i = new Intent(getActivity(), SearchActivity.class);
+                startActivityForResult(i, SearchActivity.SEARCH_FINISH);*/
+                Intent i = new Intent(getActivity(), IMActivity.class);
+                startActivity(i);
             }
         });
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh);

@@ -34,5 +34,8 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>
     <string name="title_activity_base_take_photo">BaseTakePhotoActivity</string>
+    <string name="title_activity_im">IMActivity</string>
+    <string name="title_activity_conversation">ConversationActivity</string>
+    <string name="title_activity_conversation_list">ConversationListActivity</string>
 
 </resources>
