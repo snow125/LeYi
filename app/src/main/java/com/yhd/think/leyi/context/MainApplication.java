@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.umeng.analytics.MobclickAgent;
 import com.yhd.think.leyi.data.Constants;
 import com.yhd.think.leyi.data.User;
@@ -52,7 +53,7 @@ public class MainApplication extends Application {
         MobclickAgent.setDebugMode(true);
 
         RongIM.init(this);
-        //SDKInitializer.initialize(this);
+        SDKInitializer.initialize(getApplicationContext());
     }
 
     public boolean isHavePic() {

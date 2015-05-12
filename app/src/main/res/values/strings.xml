@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="myapp_name">易趣</string>
     <string name="app_name">乐易</string>
     <string name="tabs_fragment_goods">商品</string>
@@ -37,5 +38,6 @@
     <string name="title_activity_im">IMActivity</string>
     <string name="title_activity_conversation">ConversationActivity</string>
     <string name="title_activity_conversation_list">ConversationListActivity</string>
+    <string name="title_activity_base_loc">BaseLocActivity</string>
 
 </resources>
