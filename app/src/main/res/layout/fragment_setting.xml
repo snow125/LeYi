@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:text="asdf"
+            android:textColor="#A8A49D"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"/>
 
@@ -35,10 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/test_textword"
+        android:textColor="#A8A49D"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -138,7 +140,7 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <LinearLayout
         android:layout_below="@+id/fragment_mine"
@@ -147,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <!--<RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -174,7 +176,7 @@
             android:layout_marginLeft="@dimen/good_detail_marginleft"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/divider"/>
+            android:background="@color/divider"/>-->
 
         <TextView
             android:id="@+id/fragment_setting_check_update"
@@ -182,6 +184,7 @@
             android:layout_marginLeft="@dimen/good_detail_marginleft"
             android:layout_width="match_parent"
             android:text="检查更新"
+            android:textColor="#A8A49D"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
@@ -198,6 +201,7 @@
             android:layout_marginLeft="@dimen/good_detail_marginleft"
             android:layout_width="match_parent"
             android:text="意见"
+            android:textColor="#A8A49D"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
@@ -214,6 +218,7 @@
             android:layout_marginLeft="@dimen/good_detail_marginleft"
             android:layout_width="match_parent"
             android:text="客服电话"
+            android:textColor="#A8A49D"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
@@ -230,12 +235,13 @@
             android:layout_marginLeft="@dimen/good_detail_marginleft"
             android:layout_width="match_parent"
             android:text="关于"
+            android:textColor="#A8A49D"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -249,6 +255,6 @@
             android:layout_height="50dp"
             android:background="@drawable/button_bg"/>
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </LinearLayout>

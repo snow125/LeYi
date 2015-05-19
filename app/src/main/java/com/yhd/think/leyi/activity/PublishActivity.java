@@ -36,16 +36,10 @@ import java.util.List;
 public class PublishActivity extends BaseTakePhotoActivity {
 
     private static final String puclishURL = Constants.BASE_URL+"addItem.action?wutypeId=%s&userId=%s&wuName=%s&wuDesrc=%s&hopAddr=%s&hopeMoney=%s&hopeFuwu=%s&hopeWu=%s&wuPic=%s&ImageNum=%s";
-    private EditText name_et;
     private EditText words_et;
-    private EditText money_et;
-    private EditText good_et;
-    private EditText service_et;
-    private String good;
-    private String service;
-    private String name;
+    private EditText request_et;
     private String words;
-    private String money;
+    private String description;
     private TextView title_tv;
     private String title;
     private Button publish_b;
@@ -62,8 +56,8 @@ public class PublishActivity extends BaseTakePhotoActivity {
     private int totalNum;
     private boolean uploadOK;
     private static List<Image> images = new ArrayList<Image>();
-    private String type, school;
-    private TextView type_tv, school_tv;
+//    private String type, school;
+//    private TextView type_tv, school_tv;
     private boolean isEixt;
 
     @Override
@@ -147,39 +141,7 @@ public class PublishActivity extends BaseTakePhotoActivity {
         });
     }
 
-    private void addImageView(Bitmap bitmap) {
-        final View view = LayoutInflater.from(this).inflate(R.layout.publish_picture, null, false);
-        ImageView picture = (ImageView) view.findViewById(R.id.pic_picture);
-        ImageView delete = (ImageView) view.findViewById(R.id.pic_delete);
-        picture.setImageBitmap(bitmap);
-        picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (uploadOK) {
-                    PhotoActivity.setInfo(images, LoopViewPagerFragment.TYPE_URL, false);
-                    Intent i = new Intent(PublishActivity.this, PhotoActivity.class);
-                    startActivity(i);
-                } else {
-                    ToastTool.showToast(PublishActivity.this, "图片正在上传");
-                }
 
-            }
-        });
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cameraAndpic_ll.removeView(view);
-                int num = sort(view);
-                images.remove(num);
-                imageUrls.remove(num);
-                bitmaps.remove(num);
-                pictureNum--;
-            }
-        });
-        cameraAndpic_ll.addView(view);
-        pictureNum++;
-        uploadBitmap(bitmap);
-    }
 
     private int sort(View view){
         int left = view.getLeft();
@@ -198,14 +160,9 @@ public class PublishActivity extends BaseTakePhotoActivity {
         cameraAndpic_ll = (LinearLayout) findViewById(R.id.camera_picture);
         camera = (ImageView) findViewById(R.id.activity_publish_camera);
         publish_b = (Button) findViewById(R.id.activity_publish_publish);
-        name_et = (EditText) findViewById(R.id.activity_publish_name);
-        words_et = (EditText) findViewById(R.id.activity_publish_words);
-        money_et = (EditText) findViewById(R.id.activity_publish_request_money);
+        words_et = (EditText) findViewById(R.id.activity_publish_description);
         title_tv = (TextView) findViewById(R.id.actionbar_text);
-        good_et = (EditText) findViewById(R.id.activity_publish_request_good);
-        service_et = (EditText) findViewById(R.id.activity_publish_request_service);
-        type_tv = (TextView) findViewById(R.id.activity_publish_type);
-        school_tv = (TextView) findViewById(R.id.activity_publish_school);
+        request_et = (EditText) findViewById(R.id.activity_publish_request_good);
     }
 
     @Override
@@ -215,20 +172,10 @@ public class PublishActivity extends BaseTakePhotoActivity {
 
             someToString();
 
-            if(name!=null)
-                SharedPrefsUtil.putValue("name", name);
             if(words!=null)
                 SharedPrefsUtil.putValue("words", words);
-            if(money!=null)
-                SharedPrefsUtil.putValue("money", money);
-            if(good!=null)
-                SharedPrefsUtil.putValue("good", good);
-            if(service!=null)
-                SharedPrefsUtil.putValue("service", service);
-            if(school!=null)
-                SharedPrefsUtil.putValue("school", school);
-            if(type!=null)
-                SharedPrefsUtil.putValue("type", type);
+            if(description!=null)
+                SharedPrefsUtil.putValue("money", description);
         }
     }
 
@@ -242,26 +189,12 @@ public class PublishActivity extends BaseTakePhotoActivity {
                 }
             }
 
-            name = SharedPrefsUtil.getValue("name", "");
-            name_et.setText(name);
-
             words = SharedPrefsUtil.getValue("words", "");
             words_et.setText(words);
 
-            money = SharedPrefsUtil.getValue("money", "");
-            money_et.setText(money);
+            description = SharedPrefsUtil.getValue("money", "");
+            request_et.setText(description);
 
-            good = SharedPrefsUtil.getValue("good", "");
-            good_et.setText(good);
-
-            service = SharedPrefsUtil.getValue("service", "");
-            service_et.setText(service);
-
-            school = SharedPrefsUtil.getValue("school", "");
-            school_tv.setText(school);
-
-            type = SharedPrefsUtil.getValue("type", "");
-            type_tv.setText(type);
         }else{
             images.clear();
             bitmaps.clear();
@@ -304,12 +237,42 @@ public class PublishActivity extends BaseTakePhotoActivity {
         });
     }
 
+    private void addImageView(Bitmap bitmap) {
+        final View view = LayoutInflater.from(this).inflate(R.layout.publish_picture, null, false);
+        ImageView picture = (ImageView) view.findViewById(R.id.pic_picture);
+        ImageView delete = (ImageView) view.findViewById(R.id.pic_delete);
+        picture.setImageBitmap(bitmap);
+        picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (uploadOK) {
+                    PhotoActivity.setInfo(images, LoopViewPagerFragment.TYPE_URL, false);
+                    Intent i = new Intent(PublishActivity.this, PhotoActivity.class);
+                    startActivity(i);
+                } else {
+                    ToastTool.showToast(PublishActivity.this, "图片正在上传");
+                }
+
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cameraAndpic_ll.removeView(view);
+                int num = sort(view);
+                images.remove(num);
+                imageUrls.remove(num);
+                bitmaps.remove(num);
+                pictureNum--;
+            }
+        });
+        cameraAndpic_ll.addView(view);
+        pictureNum++;
+        uploadBitmap(bitmap);
+    }
+
     private void someToString(){
-        name = name_et.getText().toString();
         words = words_et.getText().toString();
-        money = money_et.getText().toString();
-        good = good_et.getText().toString();
-        service = service_et.getText().toString();
     }
 
     private String urls2string(List<String> urls){
@@ -327,32 +290,24 @@ public class PublishActivity extends BaseTakePhotoActivity {
 
         someToString();
 
-        if(TextUtils.isEmpty(name)){
-            ToastTool.showToast(this,"名称不能为空");
-            return;
-        }
-        name = TextTool.word2use(name);
-
         if(TextUtils.isEmpty(words)){
             ToastTool.showToast(this,"描述不能为空");
             return;
         }
         words = TextTool.word2use(words);
 
-        if(TextUtils.isEmpty(money) && TextUtils.isEmpty(good) && TextUtils.isEmpty(service)){
-            ToastTool.showToast(this,"不想换点什么？");
+        if(TextUtils.isEmpty(description)){
+            ToastTool.showToast(this,"名称不能为空");
             return;
         }
-        money = TextTool.word2use(money);
-        good = TextTool.word2use(good);
-        service = TextTool.word2use(service);
+        description = TextTool.word2use(description);
     }
 
     private void uploadInfo(){
 
         checkInfo();
 
-        String url = String.format(puclishURL, 1/*type*/, user.getId(), name, words, "xidian"/*school*/, money, service, good, urls2string(imageUrls), pictureNum);
+        String url = String.format(puclishURL, 1/*type*/, user.getId(), words, "xidian"/*school*/, description,urls2string(imageUrls), pictureNum);
 
         Log.e("123", "url------>"+url);
 

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffffff"
+    android:background="#E3E1DE"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -20,27 +20,203 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/fragment_publish_sell"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/sell_good"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/fragment_publish_shop"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/shop_servece"/>
+            <LinearLayout
+                android:id="@+id/camera_picture"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/activity_publish_camera"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/add_pic"/>
+
+            </LinearLayout>
+
+            <!--<TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <EditText
+                android:id="@+id/activity_publish_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="名称"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <EditText
+                android:id="@+id/activity_publish_words"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="描述"
+                android:gravity="left"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <EditText
+                android:id="@+id/activity_publish_request_money"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="想要多少钱啊？"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <EditText
+                android:id="@+id/activity_publish_request_good"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="想换个什么物品啊？"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <EditText
+                android:id="@+id/activity_publish_request_service"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="想让别人给个什么服务啊？"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"/>
+
+            <TextView
+                android:id="@+id/activity_publish_type"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="种类"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:id="@+id/activity_publish_school"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="学校"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>-->
+
+            <EditText
+                android:id="@+id/activity_publish_description"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="写下关于它的点点滴滴……"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="5dp"/>
+
+            <EditText
+                android:id="@+id/activity_publish_request_good"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="说说你想要换什么吧"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/background_edittext"
+                android:paddingLeft="5dp"/>
+
+
+            <com.yhd.think.leyi.view.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/record"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/record"
+                android:layout_marginTop="20dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/activity_publish_publish"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:text="发布"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/button_bg"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </LinearLayout>

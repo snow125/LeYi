@@ -108,12 +108,12 @@ public class SettingFragment extends BaseFragment {
                 startActivity(i);
             }
         });
-        swith.setOnSwitchChangeListener(new SwitchView.OnSwitchChangeListener() {
-            @Override
-            public void onSwitchChanged(View view, boolean isOn) {
-                getMyApplication().setHavePic(isOn);
-            }
-        });
+//        swith.setOnSwitchChangeListener(new SwitchView.OnSwitchChangeListener() {
+//            @Override
+//            public void onSwitchChanged(View view, boolean isOn) {
+//                getMyApplication().setHavePic(isOn);
+//            }
+//        });
         head.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,7 +129,6 @@ public class SettingFragment extends BaseFragment {
             }
         });
         updateInfo();
-
     }
 
     public static void updateInfo(){
@@ -165,7 +164,7 @@ public class SettingFragment extends BaseFragment {
         suggestion = (TextView) rootView.findViewById(R.id.fragment_setting_suggestion);
         tel = (TextView) rootView.findViewById(R.id.fragment_setting_tel);
         about = (TextView) rootView.findViewById(R.id.fragment_setting_about);
-        swith = (SwitchView) rootView.findViewById(R.id.fragment_setting_switch);
+        //swith = (SwitchView) rootView.findViewById(R.id.fragment_setting_switch);
         head = (NetworkCircleImageView) rootView.findViewById(R.id.fragment_setting_head);
         name = (TextView) rootView.findViewById(R.id.fragment_setting_name);
     }

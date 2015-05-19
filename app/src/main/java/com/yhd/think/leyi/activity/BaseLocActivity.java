@@ -23,6 +23,7 @@ public abstract class BaseLocActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //context内进行SDKInitializer.initialize(getApplicationContext());
         initBAIDU();
     }
 
